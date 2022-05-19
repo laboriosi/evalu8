@@ -1,0 +1,48 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier",
+    "plugin:react-hooks/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["jest", "import", "prettier", "@typescript-eslint", "react-hooks"],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "createDefaultProgram": true,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": ["error", "never"],
+    "import/order": "error",
+    "react/jsx-curly-newline": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }]
+  },
+  "ignorePatterns": [
+    "src/utils/test-utils.jsx",
+    "src/utils/setupTests.js",
+    "config-overrides.js"
+  ]
+}
